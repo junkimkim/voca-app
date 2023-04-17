@@ -1,0 +1,432 @@
+body {
+  margin: 0;
+  font-family: "Noto Sans KR", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+.App {
+  width: 800px;
+  margin: 0 auto;
+}
+
+.header {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.header .menu {
+  position: absolute;
+  top: 10px;
+  right: 0;
+}
+
+.header .link {
+  border: 1px solid #333;
+  padding: 10px;
+  margin-left: 10px;
+  background-color: #efefef;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+.list_day > div {
+  float: left;
+  width: 20%;
+  flex: 20% 0 0;
+  box-sizing: border-box;
+  padding: 8px;
+}
+
+.list_day a {
+  display: block;
+  padding: 12px 0;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  border-radius: 10px;
+  background-color: dodgerblue;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  text-align: center;
+}
+table td {
+  width: 25%;
+  height: 70px;
+  border: 1px solid #ccc;
+  text-align: center;
+  font-size: 26px;
+}
+
+table td:first-child {
+  width: 5%;
+}
+
+table td:nth-child(5) {
+  width: 7%;
+}
+
+table td:nth-child(4) {
+  width: 11%;
+}
+
+td p {
+  margin: 0;
+}
+
+.off td {
+  background: #eee;
+  color: #ccc;
+}
+
+.btn_del {
+  margin-left: 10px;
+  color: #fff;
+  background-color: firebrick;
+}
+
+.show_sentence {
+  cursor: pointer;
+}
+
+.modal-backdrop.show {
+  opacity: 0;
+  background-color: #fff;
+}
+
+button {
+  padding: 10px;
+  font-weight: bold;
+  font-size: 18px;
+  cursor: pointer;
+  border: 0 none;
+  border-radius: 6px;
+  padding: 10px 20px;
+  color: #fff;
+  background-color: dodgerblue;
+  margin: 2px;
+}
+
+.input_area {
+  margin-bottom: 10px;
+}
+
+.input_area label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.input_area input {
+  width: 400px;
+  height: 40px;
+  font-size: 20px;
+  padding: 0 10px;
+}
+
+.input_area select {
+  width: 400px;
+  height: 40px;
+  font-size: 20px;
+}
+
+.modal {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.25);
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button:disabled {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.vocalogo {
+  width: 300px;
+  height: 65px;
+}
+
+.logo {
+  width: 260px;
+  height: 54px;
+}
+
+.buttonChoice {
+  float: left;
+  width: 49%;
+  margin: 3px;
+}
+
+@keyframes modal-show {
+  from {
+    opacity: 0;
+    margin-top: -50px;
+  }
+  to {
+    opacity: 1;
+    margin-top: 0;
+  }
+}
+@keyframes modal-bg-show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .App {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .header {
+    width: 90%;
+    position: relative;
+    padding: 5px;
+    margin: 0 auto;
+  }
+
+  .header h1 {
+    font-size: 20px;
+  }
+
+  .list_day > div {
+    float: left;
+    width: 50%;
+    flex: 20% 0 0;
+    box-sizing: border-box;
+    padding: 8px;
+  }
+
+  .modal-content {
+    background-color: #fff;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.25);
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .list_day a {
+    display: block;
+    padding: 6px 0;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    border-radius: 10px;
+    background-color: dodgerblue;
+  }
+
+  table {
+    font-size: 20px;
+    border-collapse: collapse;
+    width: 98%;
+    margin: 1%;
+  }
+
+  table th {
+    text-align: center;
+    font-size: 16px;
+  }
+
+  table td {
+    height: 30px;
+    border: 1px solid #ccc;
+    text-align: center;
+    font-size: 1em;
+  }
+
+  table td:first-child {
+    width: 5%;
+  }
+
+  table td:nth-child(5) {
+    width: 5%;
+  }
+
+  table td:nth-child(4) {
+    width: 9%;
+  }
+
+  button {
+    font-weight: bold;
+    font-size: 0.7em;
+    cursor: pointer;
+    border: 0 none;
+    border-radius: 6px;
+    padding: 7px 9px;
+    color: #fff;
+    background-color: dodgerblue;
+  }
+
+  td p {
+    margin: 0;
+  }
+
+  .vocalogo {
+    width: 250px;
+    height: 50px;
+  }
+
+  .logo {
+    width: 210px;
+    height: 45px;
+  }
+
+  .buttonChoice {
+    float: left;
+    width: 99%;
+    margin: 3px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .App {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .header {
+    width: 90%;
+    position: relative;
+    padding: 5px;
+    margin: 0 auto;
+  }
+
+  .header h1 {
+    font-size: 20px;
+  }
+
+  .list_day > div {
+    float: left;
+    width: 100%;
+    flex: 20% 0 0;
+    box-sizing: border-box;
+    padding: 5px;
+  }
+
+  .list_day a {
+    display: block;
+    padding: 7px 0;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    border-radius: 10px;
+    background-color: dodgerblue;
+  }
+
+  .modal-content {
+    background-color: #fff;
+    border-radius: 0.25rem;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.25);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  table {
+    font-size: 16px;
+    border-collapse: collapse;
+    width: 98%;
+    margin: 1%;
+  }
+
+  table th {
+    text-align: center;
+    font-size: 13px;
+  }
+
+  table td {
+    width: 25%;
+    height: 30px;
+    border: 1px solid #ccc;
+    text-align: center;
+    font-size: 1em;
+  }
+
+  td p {
+    margin: 0;
+  }
+
+  button {
+    padding: 10px;
+    font-weight: bold;
+    font-size: 0.8em;
+    cursor: pointer;
+    border: 0 none;
+    border-radius: 6px;
+    padding: 5px 5px;
+    color: #fff;
+    background-color: dodgerblue;
+  }
+
+  table td:first-child {
+    width: 5%;
+  }
+
+  table td:nth-child(5) {
+    width: 7%;
+  }
+
+  table td:nth-child(4) {
+    width: 12%;
+  }
+
+  .vocalogo {
+    width: 200px;
+    height: 40px;
+  }
+
+  .logo {
+    width: 155px;
+    height: 36px;
+  }
+  .buttonChoice {
+    float: left;
+    width: 99%;
+    margin: 3px;
+  }
+}
